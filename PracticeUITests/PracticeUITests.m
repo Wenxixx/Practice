@@ -1,17 +1,17 @@
 //
-//  PraticeUITests.m
-//  PraticeUITests
+//  PracticeUITests.m
+//  PracticeUITests
 //
 //  Created by Steven Deng on 2021/9/2.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface PraticeUITests : XCTestCase
+@interface PracticeUITests : XCTestCase
 
 @end
 
-@implementation PraticeUITests
+@implementation PracticeUITests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
