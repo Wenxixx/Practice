@@ -11,23 +11,23 @@
 #include <stdio.h>
 #include <unordered_map>
 
-struct ListNode {
-    ListNode() {
+struct DListNode {
+    DListNode() {
         value = -1;
         key = -1;
         next = nullptr;
         pre = nullptr;
     }
-    
-    ~ListNode() {
+
+    ~DListNode() {
         next = nullptr;
         pre = nullptr;
     }
-    
+
     int value;
     int key;
-    ListNode *next;
-    ListNode *pre;
+    DListNode *next;
+    DListNode *pre;
 };
 
 class LRUCache {
@@ -41,13 +41,13 @@ public:
     void print();
     
 private:
-    ListNode* find(int key);
+    DListNode* find(int key);
     void removelast();
 
 private:
     std::unordered_map<int, int> cache_map;
-    ListNode *head;
-    ListNode *tail;
+    DListNode *head;
+    DListNode *tail;
     
     int capacity;
     int size;

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E920EFD2AD3D7E800965051 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920EFB2AD3D7E800965051 /* String.cpp */; };
+		1E920F002AD5532F00965051 /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920EFE2AD5532F00965051 /* Tree.cpp */; };
+		1E920F032AD78D8F00965051 /* DoublePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920F012AD78D8F00965051 /* DoublePointer.cpp */; };
+		1E920F062AD7E7FC00965051 /* Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920F042AD7E7FC00965051 /* Array.cpp */; };
 		9D75748426E0D70700D57B18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D75748326E0D70700D57B18 /* AppDelegate.m */; };
 		9D75748726E0D70700D57B18 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D75748626E0D70700D57B18 /* SceneDelegate.m */; };
 		9D75748A26E0D70700D57B18 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D75748926E0D70700D57B18 /* ViewController.mm */; };
@@ -46,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E920EFB2AD3D7E800965051 /* String.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		1E920EFC2AD3D7E800965051 /* String.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
+		1E920EFE2AD5532F00965051 /* Tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		1E920EFF2AD5532F00965051 /* Tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
+		1E920F012AD78D8F00965051 /* DoublePointer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DoublePointer.cpp; sourceTree = "<group>"; };
+		1E920F022AD78D8F00965051 /* DoublePointer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DoublePointer.hpp; sourceTree = "<group>"; };
+		1E920F042AD7E7FC00965051 /* Array.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Array.cpp; sourceTree = "<group>"; };
+		1E920F052AD7E7FC00965051 /* Array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
 		9D75747F26E0D70700D57B18 /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D75748226E0D70700D57B18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D75748326E0D70700D57B18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,12 +195,20 @@
 		9D785E892AB99528003C7CDD /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				9D785E8B2AB9986E003C7CDD /* WXAlgorithm.h */,
+				9D785E8C2AB9986E003C7CDD /* WXAlgorithm.mm */,
 				9DAB00C8291CE759001709D0 /* LRUCache.cpp */,
 				9DAB00C9291CE759001709D0 /* LRUCache.hpp */,
 				9D7574B826E0D73700D57B18 /* LinkList.cpp */,
 				9D7574B726E0D73700D57B18 /* LinkList.h */,
-				9D785E8B2AB9986E003C7CDD /* WXAlgorithm.h */,
-				9D785E8C2AB9986E003C7CDD /* WXAlgorithm.mm */,
+				1E920EFB2AD3D7E800965051 /* String.cpp */,
+				1E920EFC2AD3D7E800965051 /* String.hpp */,
+				1E920EFE2AD5532F00965051 /* Tree.cpp */,
+				1E920EFF2AD5532F00965051 /* Tree.hpp */,
+				1E920F012AD78D8F00965051 /* DoublePointer.cpp */,
+				1E920F022AD78D8F00965051 /* DoublePointer.hpp */,
+				1E920F042AD7E7FC00965051 /* Array.cpp */,
+				1E920F052AD7E7FC00965051 /* Array.hpp */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -356,8 +376,12 @@
 				9D75748426E0D70700D57B18 /* AppDelegate.m in Sources */,
 				9D785E8D2AB9986E003C7CDD /* WXAlgorithm.mm in Sources */,
 				9DAB00CA291CE759001709D0 /* LRUCache.cpp in Sources */,
+				1E920EFD2AD3D7E800965051 /* String.cpp in Sources */,
 				9D75749526E0D70800D57B18 /* main.m in Sources */,
+				1E920F002AD5532F00965051 /* Tree.cpp in Sources */,
 				9D785E942ABBEC2F003C7CDD /* fishhook.c in Sources */,
+				1E920F062AD7E7FC00965051 /* Array.cpp in Sources */,
+				1E920F032AD78D8F00965051 /* DoublePointer.cpp in Sources */,
 				9D785E752AB1B3A4003C7CDD /* WXBlock.m in Sources */,
 				9D75748726E0D70700D57B18 /* SceneDelegate.m in Sources */,
 				9D785E842AB9710D003C7CDD /* WXRunloop.m in Sources */,

@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WXAlgorithm : NSObject
 
+#pragma mark - LinkList
 - (void)testLRUCache;
 
 - (void)testHuiwen;
@@ -18,6 +19,25 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)testCycleLinkList;
 
 - (void)testReverseLinkList;
+
+- (void)testDeleteDuplicates;
+
+- (void)testReorderLinklist;
+
+- (void)testAddTwoNumbers;
+
+#pragma mark - String
+
+- (void)tesStack;
+
+- (void)testReverseWords;
+
+#pragma mark - Tree
+- (void)testTree;
+
+
+
+- (void)testIncreasingTriplet;
 
 @end
 

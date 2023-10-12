@@ -8,35 +8,38 @@
 #ifndef LinkList_h
 #define LinkList_h
 #include <stdio.h>
+#include <string>
 
-class Node {
+using namespace std;
+
+class ListNode {
 public:
-    Node(char value) : value_(value),
-                           next_(nullptr) {}
-    ~Node() {
+    ListNode(char value) : val(value),
+                           next(nullptr) {}
+    ~ListNode() {
         printf("%p \n", this);
     }
     
-    int value_;
-    Node* next_;
+    int val;
+    ListNode* next;
 }; // struct LinkNode
 
 
 class SNode {
 public:
-    SNode(int value) : value_(value),
-                           next_(nullptr), pre_(nullptr) {}
+    SNode(int value) : val(value),
+                           next(nullptr), prev(nullptr) {}
     
     SNode(char value) : c_(value),
-                           next_(nullptr), pre_(nullptr) {}
+                           next(nullptr), prev(nullptr) {}
     ~SNode() {
         printf("%p \n", this);
     }
     
-    int value_;
+    int val;
     char c_;
-    SNode* next_;
-    SNode* pre_;
+    SNode* next;
+    SNode* prev;
 }; // struct LinkNode
 
 
@@ -59,12 +62,25 @@ private:
     SNode* tail_;
 };
 
-Node* createLinkList(int n, bool needCycle, int pos);
-void printLinkList(Node* head, bool hasCycle = false);
+#pragma mark - algorithm
+// leetcode#206 翻转链表
+ListNode* reverseLinkList(ListNode* head);
 
+// 判断链表是否有环
+bool hasCircyle(ListNode* head);
 
-Node* reverseLinkList(Node* head);
-bool hasCircyle(Node* head);
+// 删除链表中重复节点
+ListNode* deleteDuplicates(ListNode* head);
 
+// leetcode#143 重排链表
+void reorderList(ListNode* head);
+
+// leetcode#2 两数相加
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
+#pragma mark - helper
+ListNode* createLinkList(int n, bool needCycle, int pos);
+ListNode* createLinkList(vector<int> vec, bool needCycle, int pos);
+void printLinkList(ListNode* head, bool hasCycle = false);
 
 #endif /* LinkList_h */

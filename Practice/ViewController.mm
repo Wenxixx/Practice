@@ -56,7 +56,7 @@ long test_call(char *code) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 算法类
-//    TestAlgorithm *algorithm = [[TestAlgorithm alloc] init];
+    WXAlgorithm *algorithm = [[WXAlgorithm alloc] init];
 //    // LRU 缓存
 //    [algorithm testLRUCache];
 //    // 是否回文串
@@ -65,6 +65,12 @@ long test_call(char *code) {
 //    [algorithm testCycleLinkList];
 //    // 反转链表
 //    [algorithm testReverseLinkList];
+//    [algorithm testDeleteDuplicates];
+    [algorithm testAddTwoNumbers];
+    
+//    [algorithm tesStack];
+//    [algorithm testTree];
+//    [algorithm testIncreasingTriplet];
     
     // 🔒
 //    WXLock *lock = [[WXLock alloc] init];
@@ -76,12 +82,12 @@ long test_call(char *code) {
 //    [runloop startTimer];
     
     // gcd
-    WXGCD *gcd = [[WXGCD alloc] init];
+//    WXGCD *gcd = [[WXGCD alloc] init];
 //    [gcd startGCDTimer];
-    [gcd startGCDMultipleThread];
+//    [gcd startGCDMultipleThread];
 //    [gcd startSemphore];
     
-    [[WXMonitor sharedInstance] beginMonitor];
+//    [[WXMonitor sharedInstance] beginMonitor];
 }
 
 

@@ -9,8 +9,8 @@
 
 
 LRUCache::LRUCache() : capacity(0), size(0) {
-    head = new ListNode();
-    tail = new ListNode();
+    head = new DListNode();
+    tail = new DListNode();
                             
     head->next = tail;
     head->pre = nullptr;
@@ -20,8 +20,8 @@ LRUCache::LRUCache() : capacity(0), size(0) {
 }
 
 LRUCache::LRUCache(int capacity) : capacity(capacity), size(0) {
-    head = new ListNode();
-    tail = new ListNode();
+    head = new DListNode();
+    tail = new DListNode();
     head->next = tail;
     head->pre = nullptr;
     
@@ -30,7 +30,7 @@ LRUCache::LRUCache(int capacity) : capacity(capacity), size(0) {
 }
 
 LRUCache::~LRUCache() {
-    ListNode *pre = head->next;
+    DListNode *pre = head->next;
     while (head) {
         delete head;
         head = pre;
@@ -46,7 +46,7 @@ int LRUCache::get(int key) {
     }
     
     // 查找节点
-    ListNode *temp = find(key);
+    DListNode *temp = find(key);
     
     (temp->pre)->next = temp->next;
     (temp->next)->pre = temp->pre;
@@ -67,7 +67,7 @@ void LRUCache::put(int key, int value) {
             removelast();
         }
         
-        ListNode *newNode = new ListNode();
+        DListNode *newNode = new DListNode();
         newNode->key = key;
         newNode->value = value;
         
@@ -82,7 +82,7 @@ void LRUCache::put(int key, int value) {
         head->next = newNode;
         
     } else {
-        ListNode *temp = find(key);
+        DListNode *temp = find(key);
         
         temp->pre->next = temp->next;
         temp->next->pre = temp->pre;
@@ -97,8 +97,8 @@ void LRUCache::put(int key, int value) {
     cache_map[key] = value;
 }
 
-ListNode* LRUCache::find(int key) {
-    ListNode *temp = head->next;
+DListNode* LRUCache::find(int key) {
+    DListNode *temp = head->next;
     while (temp) {
         if (temp->key == key) {
             break;
@@ -114,7 +114,7 @@ void LRUCache::removelast() {
         return;
     }
     
-    ListNode* temp = tail->pre;
+    DListNode* temp = tail->pre;
     
     // hashMap中删除k-v
     auto iter = cache_map.find(temp->key);
@@ -134,7 +134,7 @@ void LRUCache::removelast() {
 }
 
 void LRUCache::print() {
-    ListNode *p = head->next;
+    DListNode *p = head->next;
     printf("list = [head->");
     while (p->next) {
         printf("%d->", p->key);

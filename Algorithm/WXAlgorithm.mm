@@ -8,8 +8,14 @@
 #import "WXAlgorithm.h"
 #include "LinkList.h"
 #include "LRUCache.hpp"
+#include "String.hpp"
+#include "Tree.hpp"
+#include "DoublePointer.hpp"
+#include <vector>
 
 @implementation WXAlgorithm
+
+#pragma mark - LinkList
 
 - (void)testLRUCache {
     LRUCache *cache = new LRUCache(10);
@@ -56,7 +62,7 @@
 
 - (void)testCycleLinkList {
     // 构建链表 - 判断链表是否成环（快慢指针）
-    Node* linkHead = createLinkList(10, false, 0);
+    ListNode* linkHead = createLinkList(10, false, 0);
     bool hasCycle = hasCircyle(linkHead);
     printf("hasCycle : %d \n", hasCycle);
     
@@ -67,7 +73,7 @@
 
 - (void)testReverseLinkList {
     bool hasCycle = false;
-    Node* linkHead = createLinkList(10, hasCycle, 3);
+    ListNode* linkHead = createLinkList(10, hasCycle, 3);
     // 打印链表
     if (!hasCycle) {
         // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, ...
@@ -82,7 +88,7 @@
     }
     
     hasCycle = true;
-    Node* linkHead2 = createLinkList(10, hasCycle, 3);
+    ListNode* linkHead2 = createLinkList(10, hasCycle, 3);
     // 打印链表
     if (!hasCycle) {
         // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 2, ...
@@ -97,5 +103,59 @@
     }
 }
 
+- (void)testDeleteDuplicates {
+    
+    std::vector<int> list({1,2,3,3,4,4,5});
+    ListNode* linkHead = createLinkList(list, false, 3);
+    
+    printLinkList(linkHead);
+    
+    deleteDuplicates(linkHead);
+}
+
+- (void)testReorderLinklist
+{
+    
+}
+
+- (void)testAddTwoNumbers
+{
+    std::vector<int> list1({2,4,5});
+    ListNode *l1 = createLinkList(list1, false, 0);
+    
+    std::vector<int> list2({5,6,4});
+    ListNode *l2 = createLinkList(list2, false, 0);
+
+    addTwoNumbers(l1, l2);
+}
+
+#pragma mark - String
+
+- (void)tesStack {
+    string path("/home/");
+    string result = simplifyPath(path);
+}
+
+- (void)testReverseWords
+{
+    string str("  hello world  ");
+    string result = reverseWords(str);
+}
+
+#pragma mark - Tree
+
+- (void)testTree {
+    TreeNode *root = new TreeNode(5);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    
+    zigzagLevelOrder(root);
+}
+
+
+- (void)testIncreasingTriplet {
+    vector<int> vec({0,4,2,1,0,-1,-3});
+    increasingTriplet(vec);
+}
 
 @end
