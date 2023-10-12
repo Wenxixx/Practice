@@ -129,6 +129,37 @@ void reorderList(ListNode* head) {
     }
 }
 
+ListNode* rotateRight(ListNode* head, int k) {
+    if (!head) {
+        return head;
+    }
+    
+    vector<ListNode *> list;
+    ListNode *cur = head;
+    while (cur) {
+        list.push_back(cur);
+        cur = cur->next;
+    }
+    int size = (int)list.size();
+    k %= size;
+    if (k == 0) {
+        return head;
+    }
+    
+    ListNode *pre = list[size - k - 1];
+    ListNode *tail = list[size - 1];
+    
+    // 尾和头连接
+    tail->next = head;
+    // 头指向要旋转的起点
+    head = pre->next;
+    // 断开起点前一个
+    pre->next = nullptr;
+    
+    return head;
+    
+}
+
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     if (!l1 && !l2) {
         return nullptr;

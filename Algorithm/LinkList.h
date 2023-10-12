@@ -69,14 +69,18 @@ ListNode* reverseLinkList(ListNode* head);
 // 判断链表是否有环
 bool hasCircyle(ListNode* head);
 
-// 删除链表中重复节点
+// leetcode#82 删除排序链表中重复元素II
 ListNode* deleteDuplicates(ListNode* head);
 
 // leetcode#143 重排链表
 void reorderList(ListNode* head);
 
+// leetcode#61 旋转链表
+ListNode* rotateRight(ListNode* head, int k);
+
 // leetcode#2 两数相加
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
 
 #pragma mark - helper
 ListNode* createLinkList(int n, bool needCycle, int pos);
