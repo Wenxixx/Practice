@@ -65,17 +65,43 @@ ListNode* reverseLinkList(ListNode* head) {
 }
 
 bool hasCircyle(ListNode* head) {
-    ListNode* current = head;
-    ListNode* next = head->next;
-    while (current && next) {
-        if (current == next) {
+    
+    // 1. 空间复杂度为O(n)
+//    std::map<ListNode *, int> map;
+//    while (head) {
+//        auto iter = map.find(head);
+//        if (iter != map.end()) {
+//            return true;
+//        }
+//
+//        map[head] = 1;
+//        head = head->next;
+//    }
+    
+    // 2. 空间复杂度为O(1)
+//    ListNode* slow = head;
+//    ListNode* fast = head->next;
+//    while (slow && fast) {
+//        if (slow == fast) {
+//            return true;
+//        }
+//        slow = slow->next;
+//        if (!fast->next) {
+//            return false;
+//        }
+//        fast = fast->next->next;
+//    }
+    
+    // 让每个节点指向同一个节点
+    ListNode* node = new ListNode(0);
+    ListNode* temp = nullptr;
+    while (head) {
+        if (head == node) {
             return true;
         }
-        current = current->next;
-        if (!next->next) {
-            return false;
-        }
-        next = next->next->next;
+        temp = head;
+        head = head->next;
+        temp->next = node;
     }
     
     return false;
@@ -194,6 +220,40 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     return dummy;
 }
 
+ListNode *detectCycle(ListNode *head) {
+    unordered_map<ListNode *, int> cacheMap;
+    while (head) {
+        auto iter = cacheMap.find(head);
+        if (iter != cacheMap.end()) {
+            return head;
+        }
+        cacheMap[head] = 1;
+        head = head->next;
+    }
+    return nullptr;
+}
+
+void mergeTwoLists (ListNode* l1, ListNode *l2) {
+    ListNode *p = new ListNode(0);
+    ListNode *newHead = p;
+    while (l1 && l2) {
+        if (l1->val < l2->val) {
+            p->next = l1;
+            l1 = l1->next;
+        } else {
+            p->next = l2;
+            l2 = l2->next;
+        }
+        p = p->next;
+    }
+
+    if (l1 == nullptr) {
+        p->next = l2;
+    } else {
+        p->next = l1;
+    }
+    printLinkList(newHead->next);
+}
 
 
 #pragma mark - helper

@@ -81,6 +81,11 @@ ListNode* rotateRight(ListNode* head, int k);
 // leetcode#2 两数相加
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
+// leetcode# 链表中环的入口节点
+ListNode *detectCycle(ListNode *head);
+
+// leetcode#
+void mergeTwoLists (ListNode* l1, ListNode *l2);
 
 #pragma mark - helper
 ListNode* createLinkList(int n, bool needCycle, int pos);

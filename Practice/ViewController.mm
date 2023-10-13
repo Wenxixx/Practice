@@ -66,11 +66,12 @@ long test_call(char *code) {
 //    // 反转链表
 //    [algorithm testReverseLinkList];
 //    [algorithm testDeleteDuplicates];
-    [algorithm testAddTwoNumbers];
+//    [algorithm testAddTwoNumbers];
     
 //    [algorithm tesStack];
 //    [algorithm testTree];
 //    [algorithm testIncreasingTriplet];
+//    [algorithm testLengthOfLongestSubstring];
     
     // 🔒
 //    WXLock *lock = [[WXLock alloc] init];

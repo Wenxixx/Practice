@@ -32,10 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)testReverseWords;
 
+- (void)testLengthOfLongestSubstring;
+
 #pragma mark - Tree
 - (void)testTree;
-
-
 
 - (void)testIncreasingTriplet;
 

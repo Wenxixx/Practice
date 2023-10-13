@@ -142,6 +142,11 @@
     string result = reverseWords(str);
 }
 
+- (void)testLengthOfLongestSubstring {
+    string s("tmmzuxt");
+    int len = lengthOfLongestSubstring(s);
+}
+
 #pragma mark - Tree
 
 - (void)testTree {
@@ -154,8 +159,8 @@
 
 
 - (void)testIncreasingTriplet {
-    vector<int> vec({0,4,2,1,0,-1,-3});
-    increasingTriplet(vec);
+//    vector<int> vec({0,4,2,1,0,-1,-3});
+//    increasingTriplet(vec);
 }
 
 @end

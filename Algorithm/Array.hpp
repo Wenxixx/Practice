@@ -19,4 +19,7 @@ vector<int> productExceptSelf(vector<int>& nums);
 // leetcode#334 连续递增的三元子序列
 bool increasingTriplet(vector<int>& nums);
 
+// leetcode#300 最长递增子序列
+int lengthOfLIS(vector<int>& nums);
+
 #endif /* Array_hpp */
