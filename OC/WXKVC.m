@@ -7,7 +7,7 @@
 
 #import "WXKVC.h"
 
-@interface Person : NSObject {
+@interface PersonOne : NSObject {
     NSString *_name;
     NSString *_isName;
     NSString *name;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation Person
+@implementation PersonOne
 
 - (instancetype) init {
     self = [super init];
@@ -59,7 +59,7 @@
 
 @interface WXKVC()
 
-@property (nonatomic, strong) Person *son;
+@property (nonatomic, strong) PersonOne *son;
 
 @end
 
@@ -69,7 +69,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _son = [Person alloc];
+        _son = [PersonOne alloc];
         _son = [_son init];
 //        [_son setValue:@"Kobe" forKey:@"isName"];
 //        [_son setValue:@"Kobe" forKey:@"name"];

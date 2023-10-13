@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1E4730FF2AD94949000C93A1 /* SynthesizeAndDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4730FC2AD94949000C93A1 /* SynthesizeAndDynamic.m */; };
 		1E4731002AD94949000C93A1 /* StrongAndCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4730FD2AD94949000C93A1 /* StrongAndCopy.m */; };
+		1E47310B2AD94AFC000C93A1 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4731052AD94AFC000C93A1 /* Student.m */; };
+		1E47310C2AD94AFC000C93A1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4731062AD94AFC000C93A1 /* Person.m */; };
+		1E47310D2AD94AFC000C93A1 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4731072AD94AFC000C93A1 /* Teacher.m */; };
+		1E4731102AD94BDC000C93A1 /* Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E47310F2AD94BDC000C93A1 /* Exception.m */; };
 		1E920EFD2AD3D7E800965051 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920EFB2AD3D7E800965051 /* String.cpp */; };
 		1E920F002AD5532F00965051 /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920EFE2AD5532F00965051 /* Tree.cpp */; };
 		1E920F032AD78D8F00965051 /* DoublePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E920F012AD78D8F00965051 /* DoublePointer.cpp */; };
@@ -56,6 +60,14 @@
 		1E4730FC2AD94949000C93A1 /* SynthesizeAndDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynthesizeAndDynamic.m; sourceTree = "<group>"; };
 		1E4730FD2AD94949000C93A1 /* StrongAndCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrongAndCopy.m; sourceTree = "<group>"; };
 		1E4730FE2AD94949000C93A1 /* SynthesizeAndDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeAndDynamic.h; sourceTree = "<group>"; };
+		1E4731022AD94AFC000C93A1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1E4731042AD94AFC000C93A1 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		1E4731052AD94AFC000C93A1 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		1E4731062AD94AFC000C93A1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1E4731072AD94AFC000C93A1 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		1E4731092AD94AFC000C93A1 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		1E47310E2AD94BDC000C93A1 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		1E47310F2AD94BDC000C93A1 /* Exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exception.m; sourceTree = "<group>"; };
 		1E920EFB2AD3D7E800965051 /* String.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		1E920EFC2AD3D7E800965051 /* String.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
 		1E920EFE2AD5532F00965051 /* Tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
@@ -138,6 +150,21 @@
 				1E4730FC2AD94949000C93A1 /* SynthesizeAndDynamic.m */,
 			);
 			path = Property;
+			sourceTree = "<group>";
+		};
+		1E4731012AD94AFC000C93A1 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				1E4731022AD94AFC000C93A1 /* Person.h */,
+				1E4731062AD94AFC000C93A1 /* Person.m */,
+				1E4731042AD94AFC000C93A1 /* Teacher.h */,
+				1E4731072AD94AFC000C93A1 /* Teacher.m */,
+				1E4731092AD94AFC000C93A1 /* Student.h */,
+				1E4731052AD94AFC000C93A1 /* Student.m */,
+				1E47310E2AD94BDC000C93A1 /* Exception.h */,
+				1E47310F2AD94BDC000C93A1 /* Exception.m */,
+			);
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 		9D75747626E0D70700D57B18 = {
@@ -233,6 +260,7 @@
 		9D785E8A2AB99581003C7CDD /* OC */ = {
 			isa = PBXGroup;
 			children = (
+				1E4731012AD94AFC000C93A1 /* Runtime */,
 				1E4730FA2AD94949000C93A1 /* Property */,
 				9D785E7F2AB94ED0003C7CDD /* WXLock.h */,
 				9D785E802AB94ED0003C7CDD /* WXLock.m */,
@@ -387,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E47310D2AD94AFC000C93A1 /* Teacher.m in Sources */,
 				9D785E7B2AB87195003C7CDD /* WXKVC.m in Sources */,
 				9D75748A26E0D70700D57B18 /* ViewController.mm in Sources */,
 				9D785E812AB94ED0003C7CDD /* WXLock.m in Sources */,
@@ -398,6 +427,8 @@
 				9D75749526E0D70800D57B18 /* main.m in Sources */,
 				1E920F002AD5532F00965051 /* Tree.cpp in Sources */,
 				9D785E942ABBEC2F003C7CDD /* fishhook.c in Sources */,
+				1E47310B2AD94AFC000C93A1 /* Student.m in Sources */,
+				1E4731102AD94BDC000C93A1 /* Exception.m in Sources */,
 				1E920F062AD7E7FC00965051 /* Array.cpp in Sources */,
 				1E920F032AD78D8F00965051 /* DoublePointer.cpp in Sources */,
 				1E4731002AD94949000C93A1 /* StrongAndCopy.m in Sources */,
@@ -406,6 +437,7 @@
 				9D75748726E0D70700D57B18 /* SceneDelegate.m in Sources */,
 				9D785E842AB9710D003C7CDD /* WXRunloop.m in Sources */,
 				9D7574B926E0D73700D57B18 /* LinkList.cpp in Sources */,
+				1E47310C2AD94AFC000C93A1 /* Person.m in Sources */,
 				9D785E902ABAD04B003C7CDD /* WXGCD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
