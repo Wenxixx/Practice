@@ -66,40 +66,42 @@
 //    }
     //
     
-    // barrier
-    dispatch_async(queue, ^{
-        NSLog(@"[GCDThread] thread-1 %@", [NSThread currentThread]);
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"[GCDThread] thread-2 %@", [NSThread currentThread]);
-    });
-
-    /* dispatch_barrier_sync：同步卡线程 / dispatch_barrier_async：异步不阻塞 */
-    dispatch_barrier_sync(queue, ^{
-        NSLog(@"[GCDThread] thread-3 %@", [NSThread currentThread]);
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"[GCDThread] thread-4 %@", [NSThread currentThread]);
-    });
-    NSLog(@"xxxxxxx");
-    
-    // group
-//    dispatch_group_t group = dispatch_group_create();
-//    dispatch_group_async(group, queue, ^{
-//        sleep(2);
+    // barrier 栅栏，处理依赖关系
+//    dispatch_async(queue, ^{
 //        NSLog(@"[GCDThread] thread-1 %@", [NSThread currentThread]);
 //    });
-//    dispatch_group_async(group, queue, ^{
-//        sleep(1);
+//    dispatch_async(queue, ^{
 //        NSLog(@"[GCDThread] thread-2 %@", [NSThread currentThread]);
 //    });
-//    dispatch_group_notify(group, queue, ^{
+//    /*
+//     dispatch_barrier_sync：同步卡线程 （输出：thread-1/2 -> thread-2/1 -> thread-3 -> xxxxxxx -> thread-4）
+//     dispatch_barrier_async：异步不阻塞（输出：xxxxxxx -> thread-2/1 -> thread-1/2 -> thread-3 -> thread-4）
+//     */
+//    dispatch_barrier_async(queue, ^{
 //        NSLog(@"[GCDThread] thread-3 %@", [NSThread currentThread]);
 //    });
-//    dispatch_group_async(group, queue, ^{
+//    dispatch_async(queue, ^{
 //        NSLog(@"[GCDThread] thread-4 %@", [NSThread currentThread]);
 //    });
 //    NSLog(@"xxxxxxx");
+    
+    // group (输出：thread-4 -> thread-1/2 -> thread-1/2 -> thread-3)
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, queue, ^{
+        sleep(1);
+        NSLog(@"[GCDThread] thread-1 %@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(1);
+        NSLog(@"[GCDThread] thread-2 %@", [NSThread currentThread]);
+    });
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@"[GCDThread] thread-3 %@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"[GCDThread] thread-4 %@", [NSThread currentThread]);
+    });
+    NSLog(@"xxxxxxx");
     
     // 信号量
 //    dispatch_semaphore_t sem = dispatch_semaphore_create(0);

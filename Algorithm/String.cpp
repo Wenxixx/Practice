@@ -249,23 +249,23 @@ vector<vector<int>> permute(vector<int>& nums) {
 }
 
 int majorityElement(vector<int>& nums) {
-        int length = (int)nums.size();
-        unordered_map<int, int> hashMap;
-        int result = -1;
-        for (int i = 0; i < length; i++) {
-            int num = nums[i];
-            unordered_map<int, int>::iterator it = hashMap.find(num);
-            if (it != hashMap.end()) {
-                int count = (it->second);
-                count++;
-                if (count > length / 2) {
-                    result = num;
-                }
-                hashMap[num] = count;
-            } else {
-                hashMap[num] = 1;
+    int length = (int)nums.size();
+    unordered_map<int, int> hashMap;
+    int result = -1;
+    for (int i = 0; i < length; i++) {
+        int num = nums[i];
+        unordered_map<int, int>::iterator it = hashMap.find(num);
+        if (it != hashMap.end()) {
+            int count = (it->second);
+            count++;
+            if (count > length / 2) {
+                result = num;
             }
+            hashMap[num] = count;
+        } else {
+            hashMap[num] = 1;
         }
-        return -1;
+    }
+    return -1;
 }
 

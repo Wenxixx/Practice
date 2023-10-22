@@ -12,6 +12,9 @@
 #import "WXRunloop.h"
 #import "WXMonitor.h"
 #import "WXGCD.h"
+#import "Person.h"
+#import "Student.h"
+#import "Teacher.h"
 
 #define CODE_LEN (500000000 * 4)
 
@@ -55,8 +58,14 @@ long test_call(char *code) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    Person *p;
+//    p = [Person alloc];
+//    Teacher *t = [Teacher alloc];
+//    Student *s = [Student alloc];
+    
     // 算法类
-    WXAlgorithm *algorithm = [[WXAlgorithm alloc] init];
+//    WXAlgorithm *algorithm = [[WXAlgorithm alloc] init];
 //    // LRU 缓存
 //    [algorithm testLRUCache];
 //    // 是否回文串
@@ -83,9 +92,9 @@ long test_call(char *code) {
 //    [runloop startTimer];
     
     // gcd
-//    WXGCD *gcd = [[WXGCD alloc] init];
+    WXGCD *gcd = [[WXGCD alloc] init];
 //    [gcd startGCDTimer];
-//    [gcd startGCDMultipleThread];
+    [gcd startGCDMultipleThread];
 //    [gcd startSemphore];
     
 //    [[WXMonitor sharedInstance] beginMonitor];
