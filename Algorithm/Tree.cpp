@@ -129,5 +129,33 @@ int maxDepth(TreeNode* root) {
     }
 }
 
+int widthOfBinaryTree(TreeNode* root) {
+    queue<pair<TreeNode *, unsigned long long>> q;
+    q.push({root, 1});
+    unsigned long long start = 0, end = 0;
+    unsigned long long ans = 1;
+    while(!q.empty()) {
+        int size = (int)q.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode *node = q.front().first;
+            unsigned long long index = q.front().second;
+            q.pop();
+            if (node->left) {
+                q.push({node->left, 2 * index});
+            }
+            if (node->right) {
+                q.push({node->right, index * 2 + 1});
+            }
+            if (i == 0) {
+                start = index;
+            }
+            if (i == size - 1) {
+                end = index;
+            }
+        }
+        ans = max(ans, end - start + 1);
+    }
+    return (int)ans;
+}
 
 #pragma mark - helper

@@ -65,7 +65,7 @@ long test_call(char *code) {
 //    Student *s = [Student alloc];
     
     // 算法类
-//    WXAlgorithm *algorithm = [[WXAlgorithm alloc] init];
+    WXAlgorithm *algorithm = [[WXAlgorithm alloc] init];
 //    // LRU 缓存
 //    [algorithm testLRUCache];
 //    // 是否回文串
@@ -78,6 +78,10 @@ long test_call(char *code) {
 //    [algorithm testAddTwoNumbers];
     
 //    [algorithm tesStack];
+//    [algorithm testReverseWords];
+    
+    [algorithm testDecodeString];
+
 //    [algorithm testTree];
 //    [algorithm testIncreasingTriplet];
 //    [algorithm testLengthOfLongestSubstring];
@@ -92,9 +96,9 @@ long test_call(char *code) {
 //    [runloop startTimer];
     
     // gcd
-    WXGCD *gcd = [[WXGCD alloc] init];
+//    WXGCD *gcd = [[WXGCD alloc] init];
 //    [gcd startGCDTimer];
-    [gcd startGCDMultipleThread];
+//    [gcd startGCDMultipleThread];
 //    [gcd startSemphore];
     
 //    [[WXMonitor sharedInstance] beginMonitor];

@@ -46,6 +46,17 @@ int sumNumbers(TreeNode* root);
 TreeNode* invertTree(TreeNode* root);
 
 // easy leetcode#104 二叉树的最大深度
+int maxDepth(TreeNode* root);
+
+// easy leetcode#110 平衡二叉树
+bool isBalanced(TreeNode* root);
+
+// 路径总和
+int sumNumbers(TreeNode* root);
+
+// leetcode#662 二叉树最大宽度
+int widthOfBinaryTree(TreeNode* root);
+
 
 
 #endif /* Tree_hpp */

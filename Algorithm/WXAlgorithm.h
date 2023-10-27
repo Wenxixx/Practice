@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)testLengthOfLongestSubstring;
 
+- (void)testDecodeString;
+
 #pragma mark - Tree
 - (void)testTree;
 

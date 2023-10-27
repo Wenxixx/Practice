@@ -147,6 +147,11 @@
     int len = lengthOfLongestSubstring(s);
 }
 
+- (void)testDecodeString {
+    string s("3[a2[c]]");
+    string res = decodeString(s);
+}
+
 #pragma mark - Tree
 
 - (void)testTree {

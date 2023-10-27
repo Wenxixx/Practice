@@ -248,6 +248,113 @@ vector<vector<int>> permute(vector<int>& nums) {
     return result;
 }
 
+string decodeString(string s) {
+    stack<string> sk;
+    string number;
+    string ans;
+    for (char c : s) {
+        if (c >= '0' && c <= '9') {
+            number += c;
+        } else if (c == '[') {
+            // 压栈 number
+            if (!number.empty()) {
+                sk.push(move(number));
+                number.clear();
+            }
+            sk.push(string(1, c));
+        } else if (c == ']') {
+            // number 出栈，拼接
+            string ch = sk.top();
+            string word("");
+            while(ch != "[") {
+                word = ch + word;
+                sk.pop();
+                ch = sk.top();
+            }
+            // [ 出栈
+            sk.pop();
+            // 数字 出栈
+            int cnt = stoi(sk.top());
+            sk.pop();
+            // 重复拼接
+            string sub("");
+            for (int i = 0; i < cnt; i++) {
+                sub += word;
+            }
+            sk.push(sub);
+        } else {
+            sk.push(string(1, c));
+        }
+    }
+    
+    while (!sk.empty()) {
+        string w = sk.top();
+        ans = w + ans;
+        sk.pop();
+    }
+    return ans;
+}
+
+const pair<int, string> valueSymbols[] = {
+    {1000, "M"},
+    {900, "CM"},
+    {500, "D"},
+    {400, "CD"},
+    {100, "C"},
+    {90, "XC"},
+    {50, "L"},
+    {40, "XL"},
+    {10, "X"},
+    {9, "IX"},
+    {5, "V"},
+    {4, "IV"},
+    {1, "I"}
+};
+
+string intToRoman(int num) {
+    string roman;
+    for (const auto &[value, symbol] : valueSymbols) {
+        while (num >= value) {
+            num -= value;
+            roman += symbol;
+        }
+        if (num == 0) {
+            break;
+        }
+    }
+    return roman;
+}
+
+int transferToValue(char c) {
+    switch(c) {
+        case 'I': return 1;
+        case 'V': return 5;
+        case 'X': return 10;
+        case 'L': return 50;
+        case 'C': return 100;
+        case 'D': return 500;
+        case 'M': return 1000;
+        default: return 0;
+    }
+}
+
+int romanToInt(string s) {
+    int num = 0;
+    int pre = 0;
+    int sum = 0;
+    for (char c : s) {
+        num = transferToValue(c);
+        if (pre < num) {
+            sum -= pre;
+        } else {
+            sum += pre;
+        }
+        pre = num;
+    }
+    sum += pre;
+    return sum;
+}
+
 int majorityElement(vector<int>& nums) {
     int length = (int)nums.size();
     unordered_map<int, int> hashMap;
